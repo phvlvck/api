@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     
     <style>
-        /* ============================================
-           الأنماط - CSS
-           ============================================ */
-        
+        /* ===== جميع الأنماط CSS ===== */
         :root {
             --bg-primary: #0a0e17;
             --bg-secondary: #141b2b;
@@ -27,7 +24,6 @@
             --border: #2a3a52;
             --radius: 12px;
             --shadow: 0 8px 32px rgba(0,0,0,0.4);
-            --transition: all 0.3s ease;
         }
 
         .light-theme {
@@ -38,20 +34,15 @@
             --text-primary: #1a2332;
             --text-secondary: #5a6b85;
             --border: #d0d8e0;
-            --shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Cairo', sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
-            transition: var(--transition);
+            transition: all 0.3s ease;
             min-height: 100vh;
         }
 
@@ -66,7 +57,6 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
         }
 
         .nav-brand {
@@ -76,10 +66,6 @@
             font-size: 22px;
             font-weight: 700;
             color: var(--accent-primary);
-        }
-
-        .nav-brand i {
-            font-size: 28px;
         }
 
         .nav-actions {
@@ -95,13 +81,11 @@
             padding: 10px;
             border-radius: 8px;
             cursor: pointer;
-            transition: var(--transition);
             width: 42px;
             height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
         }
 
         .icon-btn:hover {
@@ -136,12 +120,9 @@
             border-left: 1px solid var(--border);
             padding: 24px 0;
             flex-shrink: 0;
-            transition: var(--transition);
         }
 
-        .nav-menu {
-            list-style: none;
-        }
+        .nav-menu { list-style: none; }
 
         .nav-item {
             display: flex;
@@ -149,9 +130,9 @@
             gap: 14px;
             padding: 14px 24px;
             cursor: pointer;
-            transition: var(--transition);
             color: var(--text-secondary);
             border-right: 3px solid transparent;
+            transition: all 0.3s ease;
         }
 
         .nav-item:hover {
@@ -165,20 +146,15 @@
             border-right-color: var(--accent-primary);
         }
 
-        .nav-item i {
-            width: 22px;
-            text-align: center;
-            font-size: 18px;
-        }
+        .nav-item i { width: 22px; text-align: center; }
 
-        /* ===== المحتوى ===== */
         .content {
             flex: 1;
             padding: 32px;
             overflow-y: auto;
         }
 
-        /* ===== بطاقات الإحصائيات ===== */
+        /* ===== البطاقات ===== */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -191,7 +167,7 @@
             padding: 24px;
             border-radius: var(--radius);
             border: 1px solid var(--border);
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
 
         .stat-card:hover {
@@ -210,14 +186,10 @@
             font-weight: 700;
         }
 
-        .stat-card .change {
+        .stat-card .sub {
+            color: var(--text-secondary);
             font-size: 13px;
-            color: var(--success);
             margin-top: 4px;
-        }
-
-        .stat-card .change.danger {
-            color: var(--danger);
         }
 
         /* ===== الجداول ===== */
@@ -253,7 +225,6 @@
             padding: 8px 14px;
             border-radius: 6px;
             font-family: inherit;
-            font-size: 14px;
         }
 
         .table-header input:focus,
@@ -274,18 +245,14 @@
             color: var(--text-secondary);
             font-weight: 600;
             font-size: 13px;
-            text-transform: uppercase;
         }
 
         td {
             padding: 12px 20px;
             border-bottom: 1px solid var(--border);
-            font-size: 14px;
         }
 
-        tr:hover td {
-            background: var(--bg-hover);
-        }
+        tr:hover td { background: var(--bg-hover); }
 
         .status-badge {
             padding: 4px 12px;
@@ -299,15 +266,9 @@
             color: var(--success);
         }
 
-        .status-badge.inactive,
         .status-badge.expired {
             background: rgba(255, 71, 87, 0.2);
             color: var(--danger);
-        }
-
-        .status-badge.pending {
-            background: rgba(255, 165, 2, 0.2);
-            color: var(--warning);
         }
 
         .status-badge.suspended {
@@ -320,6 +281,16 @@
             color: var(--danger);
         }
 
+        .license-code {
+            background: var(--bg-primary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 13px;
+            color: var(--accent-secondary);
+            direction: ltr;
+        }
+
         /* ===== الأزرار ===== */
         .btn {
             padding: 8px 18px;
@@ -328,52 +299,24 @@
             cursor: pointer;
             font-weight: 600;
             font-size: 13px;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             font-family: inherit;
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
 
-        .btn-primary {
-            background: var(--accent-primary);
-            color: white;
-        }
+        .btn-primary { background: var(--accent-primary); color: white; }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn-danger:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        .btn-danger {
-            background: var(--danger);
-            color: white;
-        }
+        .btn-success { background: var(--success); color: white; }
+        .btn-success:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        .btn-danger:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        .btn-success {
-            background: var(--success);
-            color: white;
-        }
-
-        .btn-success:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        .btn-warning {
-            background: var(--warning);
-            color: white;
-        }
-
-        .btn-sm {
-            padding: 4px 12px;
-            font-size: 12px;
-        }
+        .btn-warning { background: var(--warning); color: white; }
+        .btn-sm { padding: 4px 12px; font-size: 12px; }
 
         /* ===== النوافذ المنبثقة ===== */
         .modal-overlay {
@@ -387,9 +330,7 @@
             align-items: center;
         }
 
-        .modal-overlay.active {
-            display: flex;
-        }
+        .modal-overlay.active { display: flex; }
 
         .modal {
             background: var(--bg-secondary);
@@ -402,14 +343,9 @@
             overflow-y: auto;
         }
 
-        .modal h2 {
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
+        .modal h2 { margin-bottom: 20px; }
 
-        .form-group {
-            margin-bottom: 16px;
-        }
+        .form-group { margin-bottom: 16px; }
 
         .form-group label {
             display: block;
@@ -419,8 +355,7 @@
         }
 
         .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-group select {
             width: 100%;
             padding: 10px 14px;
             background: var(--bg-primary);
@@ -428,20 +363,12 @@
             border-radius: 6px;
             color: var(--text-primary);
             font-family: inherit;
-            font-size: 14px;
-            transition: var(--transition);
         }
 
         .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-group select:focus {
             outline: none;
             border-color: var(--accent-primary);
-        }
-
-        .form-group textarea {
-            min-height: 80px;
-            resize: vertical;
         }
 
         .form-group .checkbox-group {
@@ -451,7 +378,6 @@
         }
 
         .form-group .checkbox-group input[type="checkbox"] {
-            width: auto;
             width: 18px;
             height: 18px;
         }
@@ -463,7 +389,6 @@
             margin-top: 24px;
         }
 
-        /* ===== رسائل ===== */
         .alert {
             padding: 12px 16px;
             border-radius: 8px;
@@ -473,63 +398,18 @@
             gap: 10px;
         }
 
-        .alert-success {
-            background: rgba(46, 213, 115, 0.15);
-            color: var(--success);
-            border: 1px solid rgba(46, 213, 115, 0.3);
-        }
-
         .alert-danger {
             background: rgba(255, 71, 87, 0.15);
             color: var(--danger);
             border: 1px solid rgba(255, 71, 87, 0.3);
         }
 
-        .alert-warning {
-            background: rgba(255, 165, 2, 0.15);
-            color: var(--warning);
-            border: 1px solid rgba(255, 165, 2, 0.3);
+        .alert-success {
+            background: rgba(46, 213, 115, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(46, 213, 115, 0.3);
         }
 
-        .alert-info {
-            background: rgba(79, 140, 255, 0.15);
-            color: var(--accent-primary);
-            border: 1px solid rgba(79, 140, 255, 0.3);
-        }
-
-        /* ===== شاشة التحميل ===== */
-        .loading-spinner {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 60px;
-            gap: 12px;
-        }
-
-        .loading-spinner i {
-            font-size: 32px;
-            color: var(--accent-primary);
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* ===== كود الترخيص ===== */
-        .license-code {
-            background: var(--bg-primary);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 13px;
-            color: var(--accent-secondary);
-            letter-spacing: 1px;
-            direction: ltr;
-        }
-
-        /* ===== شكل الـ Form ===== */
         .form-card {
             max-width: 550px;
             margin: 0 auto;
@@ -539,13 +419,6 @@
             border: 1px solid var(--border);
         }
 
-        .form-card h2 {
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
         .form-card .btn {
             width: 100%;
             padding: 12px;
@@ -553,80 +426,59 @@
             justify-content: center;
         }
 
-        /* ===== استجابة ===== */
-        @media (max-width: 1024px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        /* ===== التوست ===== */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            max-width: 400px;
+            padding: 16px 24px;
+            border-radius: 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            animation: slideIn 0.3s ease;
+            transition: all 0.3s ease;
         }
 
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== استجابة ===== */
         @media (max-width: 768px) {
             .sidebar {
                 width: 72px;
                 padding: 16px 0;
             }
-            
-            .sidebar .nav-item span {
-                display: none;
-            }
-            
-            .sidebar .nav-item {
-                justify-content: center;
-                padding: 14px;
-            }
-            
-            .content {
-                padding: 16px;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .navbar {
-                padding: 12px 16px;
-            }
-            
-            .nav-brand span {
-                font-size: 16px;
-            }
-
-            .table-header {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .table-header .filters {
-                flex-direction: column;
-            }
+            .sidebar .nav-item span { display: none; }
+            .sidebar .nav-item { justify-content: center; padding: 14px; }
+            .content { padding: 16px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .navbar { padding: 12px 16px; }
+            .table-header { flex-direction: column; align-items: stretch; }
+            .table-header .filters { flex-direction: column; }
         }
 
         @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .user-profile span {
-                display: none;
-            }
+            .stats-grid { grid-template-columns: 1fr; }
+            .user-profile span { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================================
-    الهيكل - HTML
-    ============================================ -->
-
+    <!-- ===== الهيكل ===== -->
     <div id="app">
-        <!-- شريط التنقل -->
         <nav class="navbar">
             <div class="nav-brand">
                 <i class="fas fa-cube"></i>
                 <span>مدير الاشتراكات</span>
             </div>
             <div class="nav-actions">
-                <button id="themeToggle" class="icon-btn" title="تبديل الوضع">
+                <button id="themeToggle" class="icon-btn">
                     <i class="fas fa-moon"></i>
                 </button>
                 <div class="user-profile">
@@ -640,8 +492,7 @@
         </nav>
 
         <div class="main-container">
-            <!-- القائمة الجانبية -->
-            <aside class="sidebar" id="sidebar">
+            <aside class="sidebar">
                 <ul class="nav-menu">
                     <li class="nav-item active" data-page="dashboard">
                         <i class="fas fa-chart-pie"></i>
@@ -659,34 +510,35 @@
                         <i class="fas fa-plus-circle"></i>
                         <span>إنشاء اشتراك</span>
                     </li>
+                    <li class="nav-item" data-page="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>الإعدادات</span>
+                    </li>
                 </ul>
             </aside>
 
-            <!-- المحتوى -->
             <main class="content" id="content">
-                <!-- سيتم تحميل المحتوى هنا بواسطة JavaScript -->
+                <!-- سيتم تحميل المحتوى هنا -->
             </main>
         </div>
     </div>
 
-    <!-- ============================================
-    نافذة تسجيل الدخول المنبثقة
-    ============================================ -->
+    <!-- ===== نافذة تسجيل الدخول ===== -->
     <div class="modal-overlay" id="loginModal">
         <div class="modal">
             <h2><i class="fas fa-lock" style="color:var(--accent-primary);"></i> تسجيل الدخول</h2>
             <form id="loginForm">
+                <div id="loginStatus" style="display:none;" class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span id="loginErrorMsg">فشل تسجيل الدخول</span>
+                </div>
                 <div class="form-group">
                     <label>البريد الإلكتروني</label>
-                    <input type="email" id="loginEmail" required placeholder="admin@smartapp.com" value="admin@smartapp.com" />
+                    <input type="email" id="loginEmail" required placeholder="admin@smartapp.com" />
                 </div>
                 <div class="form-group">
                     <label>كلمة المرور</label>
-                    <input type="password" id="loginPassword" required placeholder="••••••••" value="password123" />
-                </div>
-                <div id="loginError" class="alert alert-danger" style="display:none;">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <span>فشل تسجيل الدخول. تحقق من البريد وكلمة المرور.</span>
+                    <input type="password" id="loginPassword" required placeholder="••••••••" />
                 </div>
                 <div class="modal-actions">
                     <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
@@ -697,9 +549,7 @@
         </div>
     </div>
 
-    <!-- ============================================
-    نافذة إنشاء اشتراك
-    ============================================ -->
+    <!-- ===== نافذة إنشاء اشتراك ===== -->
     <div class="modal-overlay" id="createModal">
         <div class="modal">
             <h2><i class="fas fa-plus-circle" style="color:var(--success);"></i> إنشاء اشتراك جديد</h2>
@@ -708,7 +558,7 @@
                     <label>الباقة</label>
                     <select id="packageName" required>
                         <option value="basic">Basic</option>
-                        <option value="premium" selected>Premium</option>
+                        <option value="premium">Premium</option>
                         <option value="pro">Pro</option>
                     </select>
                 </div>
@@ -728,28 +578,28 @@
                 </div>
                 <div class="form-group">
                     <label>معرف المستخدم (User ID)</label>
-                    <input type="text" id="userId" placeholder="أدخل User ID" required value="demo-user-id" />
+                    <input type="text" id="userId" placeholder="أدخل User ID" required />
                 </div>
                 <div class="modal-actions">
                     <button type="button" class="btn btn-danger" onclick="closeModal('createModal')">إلغاء</button>
-                    <button type="submit" class="btn btn-success">
-                        <i class="fas fa-plus"></i> إنشاء
-                    </button>
+                    <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i> إنشاء</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- ============================================
-    JavaScript - المنطق
-    ============================================ -->
+    <!-- ===== JavaScript ===== -->
     <script>
         // ============================================
-        // نظام إدارة الاشتراكات - JavaScript
+        // التطبيق الرئيسي - متصل بالخادم الحقيقي
         // ============================================
 
         class SubscriptionManager {
             constructor() {
+                // ===== الإعدادات =====
+                // غيّر هذا الرابط إلى رابط Netlify الخاص بك
+                this.API_BASE = window.location.origin + '/.netlify/functions/api';
+                
                 this.currentPage = 'dashboard';
                 this.isLoggedIn = false;
                 this.user = null;
@@ -757,6 +607,7 @@
                 this.subscriptions = [];
                 this.devices = [];
                 this.stats = {};
+                this.loading = false;
                 this.init();
             }
 
@@ -772,62 +623,38 @@
             }
 
             // ============================================
-            // إعدادات الوضع
+            // طلبات API
             // ============================================
-            loadTheme() {
-                const saved = localStorage.getItem('theme') || 'dark';
-                document.documentElement.className = saved === 'dark' ? '' : 'light-theme';
-                const icon = document.querySelector('#themeToggle i');
-                if (icon) {
-                    icon.className = saved === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+            async apiRequest(endpoint, method = 'GET', data = null) {
+                const url = `${this.API_BASE}${endpoint}`;
+                const options = {
+                    method,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                };
+
+                if (this.token) {
+                    options.headers['Authorization'] = `Bearer ${this.token}`;
                 }
-            }
 
-            toggleTheme() {
-                const isLight = document.documentElement.classList.contains('light-theme');
-                document.documentElement.classList.toggle('light-theme');
-                localStorage.setItem('theme', isLight ? 'dark' : 'light');
-                this.loadTheme();
-            }
+                if (data) {
+                    options.body = JSON.stringify(data);
+                }
 
-            // ============================================
-            // الأحداث
-            // ============================================
-            setupEventListeners() {
-                // تبديل الوضع
-                document.getElementById('themeToggle').addEventListener('click', () => this.toggleTheme());
-
-                // التنقل
-                document.querySelectorAll('.nav-item').forEach(item => {
-                    item.addEventListener('click', () => {
-                        const page = item.dataset.page;
-                        this.navigateTo(page);
-                    });
-                });
-
-                // تسجيل الخروج
-                document.getElementById('logoutBtn').addEventListener('click', () => this.logout());
-
-                // نموذج تسجيل الدخول
-                document.getElementById('loginForm').addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    this.handleLogin();
-                });
-
-                // نموذج إنشاء اشتراك
-                document.getElementById('createForm').addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    this.handleCreateSubscription();
-                });
-
-                // إغلاق النوافذ عند الضغط خارجها
-                document.querySelectorAll('.modal-overlay').forEach(modal => {
-                    modal.addEventListener('click', (e) => {
-                        if (e.target === modal) {
-                            modal.classList.remove('active');
-                        }
-                    });
-                });
+                try {
+                    const response = await fetch(url, options);
+                    const result = await response.json();
+                    
+                    if (!response.ok) {
+                        throw new Error(result.error || 'خطأ في الطلب');
+                    }
+                    
+                    return result;
+                } catch (error) {
+                    console.error('API Error:', error);
+                    throw error;
+                }
             }
 
             // ============================================
@@ -836,9 +663,12 @@
             checkAuth() {
                 if (this.token) {
                     this.isLoggedIn = true;
-                    this.user = JSON.parse(localStorage.getItem('user') || '{}');
-                    document.getElementById('userName').textContent = this.user.name || 'المطور';
-                    document.getElementById('logoutBtn').style.display = 'inline-flex';
+                    const userData = localStorage.getItem('user');
+                    if (userData) {
+                        this.user = JSON.parse(userData);
+                        document.getElementById('userName').textContent = this.user.name || 'المطور';
+                        document.getElementById('logoutBtn').style.display = 'inline-flex';
+                    }
                     document.getElementById('loginModal').classList.remove('active');
                 } else {
                     this.isLoggedIn = false;
@@ -851,39 +681,37 @@
             async handleLogin() {
                 const email = document.getElementById('loginEmail').value;
                 const password = document.getElementById('loginPassword').value;
-                const errorEl = document.getElementById('loginError');
+                const statusEl = document.getElementById('loginStatus');
+                const errorMsg = document.getElementById('loginErrorMsg');
 
-                errorEl.style.display = 'none';
+                statusEl.style.display = 'none';
 
                 if (!email || !password) {
-                    errorEl.style.display = 'flex';
-                    errorEl.querySelector('span').textContent = 'الرجاء إدخال البريد وكلمة المرور';
+                    statusEl.style.display = 'flex';
+                    errorMsg.textContent = 'الرجاء إدخال البريد وكلمة المرور';
                     return;
                 }
 
                 try {
-                    // محاكاة تسجيل الدخول (للاختبار)
-                    if (email === 'admin@smartapp.com' && password === 'password123') {
-                        this.isLoggedIn = true;
-                        this.user = { id: 'admin-1', name: 'المطور الرئيسي', email: 'admin@smartapp.com', role: 'admin' };
-                        this.token = 'demo-token-123456';
-                        
-                        localStorage.setItem('auth_token', this.token);
-                        localStorage.setItem('user', JSON.stringify(this.user));
-                        
-                        document.getElementById('userName').textContent = this.user.name;
-                        document.getElementById('logoutBtn').style.display = 'inline-flex';
-                        document.getElementById('loginModal').classList.remove('active');
-                        
-                        this.navigateTo('dashboard');
-                        this.showToast('✅ مرحباً بك يا ' + this.user.name, 'success');
-                    } else {
-                        errorEl.style.display = 'flex';
-                        errorEl.querySelector('span').textContent = '❌ البريد أو كلمة المرور غير صحيحة';
-                    }
+                    const result = await this.apiRequest('/login', 'POST', { email, password });
+                    
+                    this.token = result.token;
+                    this.user = result.user;
+                    this.isLoggedIn = true;
+                    
+                    localStorage.setItem('auth_token', this.token);
+                    localStorage.setItem('user', JSON.stringify(this.user));
+                    
+                    document.getElementById('userName').textContent = this.user.name;
+                    document.getElementById('logoutBtn').style.display = 'inline-flex';
+                    document.getElementById('loginModal').classList.remove('active');
+                    
+                    this.showToast(`✅ مرحباً ${this.user.name}`, 'success');
+                    this.navigateTo('dashboard');
+                    
                 } catch (error) {
-                    errorEl.style.display = 'flex';
-                    errorEl.querySelector('span').textContent = '❌ خطأ في الاتصال بالخادم';
+                    statusEl.style.display = 'flex';
+                    errorMsg.textContent = error.message || 'فشل تسجيل الدخول';
                 }
             }
 
@@ -897,6 +725,34 @@
                 document.getElementById('logoutBtn').style.display = 'none';
                 document.getElementById('loginModal').classList.add('active');
                 this.showToast('تم تسجيل الخروج', 'info');
+            }
+
+            // ============================================
+            // جلب البيانات من الخادم
+            // ============================================
+            async fetchData() {
+                if (this.loading) return;
+                this.loading = true;
+
+                try {
+                    // جلب الإحصائيات
+                    const statsResult = await this.apiRequest('/stats');
+                    this.stats = statsResult;
+
+                    // جلب الاشتراكات
+                    const subsResult = await this.apiRequest('/subscriptions');
+                    this.subscriptions = subsResult || [];
+
+                    // جلب الأجهزة
+                    const devicesResult = await this.apiRequest('/devices');
+                    this.devices = devicesResult || [];
+
+                } catch (error) {
+                    console.error('خطأ في جلب البيانات:', error);
+                    this.showToast('❌ خطأ في جلب البيانات من الخادم', 'danger');
+                } finally {
+                    this.loading = false;
+                }
             }
 
             // ============================================
@@ -924,93 +780,58 @@
                     case 'create':
                         this.renderCreate(content);
                         break;
+                    case 'settings':
+                        this.renderSettings(content);
+                        break;
                     default:
                         content.innerHTML = '<h2>الصفحة غير موجودة</h2>';
                 }
             }
 
             // ============================================
-            // جلب البيانات (محاكاة)
-            // ============================================
-            fetchData() {
-                // بيانات وهمية
-                this.stats = {
-                    users: 47,
-                    subscriptions: 32,
-                    activeSubscriptions: 28,
-                    devices: 156,
-                    activeDevices: 89,
-                    expiringSoon: 5,
-                    apiCalls: 1247,
-                    bannedDevices: 3
-                };
-
-                this.subscriptions = [
-                    { id: '1', license_key: 'PREMIUM-2026-001', package_name: 'premium', user: { name: 'أحمد محمد', email: 'ahmed@test.com' }, max_devices: 5, devices_count: 3, start_date: '2026-01-01T00:00:00Z', end_date: '2027-01-01T00:00:00Z', status: 'active' },
-                    { id: '2', license_key: 'BASIC-2026-002', package_name: 'basic', user: { name: 'سارة خالد', email: 'sara@test.com' }, max_devices: 1, devices_count: 1, start_date: '2026-02-01T00:00:00Z', end_date: '2026-08-01T00:00:00Z', status: 'active' },
-                    { id: '3', license_key: 'PRO-2026-003', package_name: 'pro', user: { name: 'محمد علي', email: 'mohammed@test.com' }, max_devices: 10, devices_count: 7, start_date: '2025-06-01T00:00:00Z', end_date: '2026-06-01T00:00:00Z', status: 'expired' },
-                    { id: '4', license_key: 'PREMIUM-2026-004', package_name: 'premium', user: { name: 'نورة سعد', email: 'noura@test.com' }, max_devices: 3, devices_count: 2, start_date: '2026-03-15T00:00:00Z', end_date: '2026-09-15T00:00:00Z', status: 'active' },
-                    { id: '5', license_key: 'BASIC-2026-005', package_name: 'basic', user: { name: 'خالد سليمان', email: 'khalid@test.com' }, max_devices: 1, devices_count: 0, start_date: '2026-04-01T00:00:00Z', end_date: '2026-07-01T00:00:00Z', status: 'suspended' },
-                    { id: '6', license_key: 'DEMO-2026-001', package_name: 'premium', user: { name: 'مستخدم تجريبي', email: 'demo@test.com' }, max_devices: 2, devices_count: 2, start_date: '2026-01-15T00:00:00Z', end_date: '2026-07-15T00:00:00Z', status: 'active' },
-                ];
-
-                this.devices = [
-                    { id: '1', device_id: 'DEV-001', device_name: 'Samsung Galaxy S24', android_version: '14', app_version: '2.1.0', subscriptions: { license_key: 'PREMIUM-2026-001', package_name: 'premium' }, last_seen: '2026-07-05T18:30:00Z', status: 'active' },
-                    { id: '2', device_id: 'DEV-002', device_name: 'Google Pixel 8', android_version: '14', app_version: '2.0.5', subscriptions: { license_key: 'PREMIUM-2026-001', package_name: 'premium' }, last_seen: '2026-07-04T14:20:00Z', status: 'active' },
-                    { id: '3', device_id: 'DEV-003', device_name: 'OnePlus 12', android_version: '13', app_version: '2.1.0', subscriptions: { license_key: 'BASIC-2026-002', package_name: 'basic' }, last_seen: '2026-07-05T10:15:00Z', status: 'active' },
-                    { id: '4', device_id: 'DEV-004', device_name: 'Xiaomi 14 Pro', android_version: '14', app_version: '2.0.0', subscriptions: { license_key: 'PRO-2026-003', package_name: 'pro' }, last_seen: '2026-06-28T09:00:00Z', status: 'blocked' },
-                    { id: '5', device_id: 'DEV-005', device_name: 'Samsung Galaxy A54', android_version: '13', app_version: '2.1.0', subscriptions: { license_key: 'PREMIUM-2026-004', package_name: 'premium' }, last_seen: '2026-07-05T16:45:00Z', status: 'active' },
-                    { id: '6', device_id: 'DEV-006', device_name: 'Nothing Phone 2', android_version: '14', app_version: '2.0.5', subscriptions: { license_key: 'DEMO-2026-001', package_name: 'premium' }, last_seen: '2026-07-03T20:10:00Z', status: 'active' },
-                    { id: '7', device_id: 'DEV-007', device_name: 'Motorola Edge 40', android_version: '13', app_version: '2.0.0', subscriptions: { license_key: 'DEMO-2026-001', package_name: 'premium' }, last_seen: '2026-07-01T12:30:00Z', status: 'active' },
-                ];
-
-                // إحصائيات إضافية
-                this.stats.devices = this.devices.length;
-                this.stats.activeDevices = this.devices.filter(d => d.status === 'active').length;
-                this.stats.bannedDevices = this.devices.filter(d => d.status === 'blocked').length;
-                this.stats.subscriptions = this.subscriptions.length;
-                this.stats.activeSubscriptions = this.subscriptions.filter(s => s.status === 'active').length;
-            }
-
-            // ============================================
             // عرض لوحة التحكم
             // ============================================
-            renderDashboard(container) {
-                this.fetchData();
+            async renderDashboard(container) {
+                container.innerHTML = `
+                    <div class="loading-spinner" style="display:flex;justify-content:center;padding:60px;gap:12px;">
+                        <i class="fas fa-spinner fa-spin" style="font-size:32px;color:var(--accent-primary);"></i>
+                        <span style="color:var(--text-secondary);">جاري التحميل...</span>
+                    </div>
+                `;
 
-                const recent = this.subscriptions.slice(0, 5);
-                
+                await this.fetchData();
+
                 container.innerHTML = `
                     <div class="stats-grid">
                         <div class="stat-card">
                             <div class="label">👥 المستخدمين</div>
-                            <div class="value">${this.stats.users}</div>
-                            <div class="change">↑ 12% هذا الشهر</div>
+                            <div class="value">${this.stats.users || 0}</div>
+                            <div class="sub">${this.stats.activeUsers || 0} نشط</div>
                         </div>
                         <div class="stat-card">
                             <div class="label">🔑 الاشتراكات النشطة</div>
-                            <div class="value">${this.stats.activeSubscriptions}</div>
-                            <div class="change">إجمالي: ${this.stats.subscriptions}</div>
+                            <div class="value">${this.stats.activeSubscriptions || 0}</div>
+                            <div class="sub">إجمالي: ${this.stats.subscriptions || 0}</div>
                         </div>
                         <div class="stat-card">
                             <div class="label">📱 الأجهزة النشطة</div>
-                            <div class="value">${this.stats.activeDevices}</div>
-                            <div class="change">إجمالي: ${this.stats.devices}</div>
+                            <div class="value">${this.stats.activeDevices || 0}</div>
+                            <div class="sub">إجمالي: ${this.stats.devices || 0}</div>
                         </div>
                         <div class="stat-card">
                             <div class="label">⏰ تنتهي قريباً</div>
-                            <div class="value" style="color: var(--warning);">${this.stats.expiringSoon}</div>
-                            <div class="change danger">خلال 7 أيام</div>
+                            <div class="value" style="color: var(--warning);">${this.stats.expiringSoon || 0}</div>
+                            <div class="sub">خلال 7 أيام</div>
                         </div>
                         <div class="stat-card">
                             <div class="label">🚫 الأجهزة المحظورة</div>
-                            <div class="value" style="color: var(--danger);">${this.stats.bannedDevices}</div>
-                            <div class="change danger">↑ 3% هذا الشهر</div>
+                            <div class="value" style="color: var(--danger);">${this.stats.bannedDevices || 0}</div>
+                            <div class="sub">${this.stats.devices ? Math.round((this.stats.bannedDevices / this.stats.devices) * 100) : 0}%</div>
                         </div>
                         <div class="stat-card">
                             <div class="label">📊 طلب API</div>
-                            <div class="value">${this.stats.apiCalls}</div>
-                            <div class="change">↑ 22% هذا الشهر</div>
+                            <div class="value">${this.stats.apiCalls || 0}</div>
+                            <div class="sub">آخر 24 ساعة</div>
                         </div>
                     </div>
 
@@ -1019,13 +840,13 @@
                             <h3>📋 آخر الاشتراكات</h3>
                             <span style="color: var(--text-secondary); font-size: 13px;">آخر 5 اشتراكات</span>
                         </div>
-                        ${this.renderSubscriptionTable(recent)}
+                        ${this.renderSubscriptionTable(this.subscriptions.slice(0, 5))}
                     </div>
 
                     <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
                         <div class="table-container" style="margin-top:0;">
                             <div class="table-header">
-                                <h3>📱 آخر الأجهزة النشطة</h3>
+                                <h3>📱 آخر الأجهزة</h3>
                             </div>
                             ${this.renderDeviceTable(this.devices.slice(0, 3))}
                         </div>
@@ -1050,6 +871,10 @@
                 const colors = { basic: '#4f8cff', premium: '#2ed573', pro: '#ffa502' };
                 const total = Object.values(packages).reduce((a, b) => a + b, 0);
                 
+                if (total === 0) {
+                    return '<p style="color:var(--text-secondary);">لا توجد اشتراكات</p>';
+                }
+                
                 return Object.entries(packages).map(([name, count]) => {
                     const percentage = Math.round((count / total) * 100);
                     return `
@@ -1069,9 +894,16 @@
             // ============================================
             // عرض الاشتراكات
             // ============================================
-            renderSubscriptions(container) {
-                this.fetchData();
-                
+            async renderSubscriptions(container) {
+                container.innerHTML = `
+                    <div class="loading-spinner" style="display:flex;justify-content:center;padding:60px;gap:12px;">
+                        <i class="fas fa-spinner fa-spin" style="font-size:32px;color:var(--accent-primary);"></i>
+                        <span style="color:var(--text-secondary);">جاري التحميل...</span>
+                    </div>
+                `;
+
+                await this.fetchData();
+
                 container.innerHTML = `
                     <div class="table-container">
                         <div class="table-header">
@@ -1086,6 +918,9 @@
                                 </select>
                                 <button class="btn btn-success" onclick="openModal('createModal')">
                                     <i class="fas fa-plus"></i> جديد
+                                </button>
+                                <button class="btn btn-primary" onclick="app.refreshData()">
+                                    <i class="fas fa-sync"></i>
                                 </button>
                             </div>
                         </div>
@@ -1120,7 +955,7 @@
                                 <tr>
                                     <td><span class="license-code">${sub.license_key}</span></td>
                                     <td style="text-transform:capitalize;">${sub.package_name}</td>
-                                    <td>${sub.user?.name || 'غير محدد'}</td>
+                                    <td>${sub.users?.name || 'غير محدد'}</td>
                                     <td>${sub.devices_count || 0}/${sub.max_devices}</td>
                                     <td>${new Date(sub.start_date).toLocaleDateString('ar-EG')}</td>
                                     <td>${new Date(sub.end_date).toLocaleDateString('ar-EG')}</td>
@@ -1146,7 +981,7 @@
                 
                 const filtered = this.subscriptions.filter(sub => {
                     const matchSearch = sub.license_key.toLowerCase().includes(search) || 
-                                       sub.user?.name?.toLowerCase().includes(search) ||
+                                       sub.users?.name?.toLowerCase().includes(search) ||
                                        sub.package_name.toLowerCase().includes(search);
                     const matchStatus = status === 'all' || sub.status === status;
                     return matchSearch && matchStatus;
@@ -1161,9 +996,16 @@
             // ============================================
             // عرض الأجهزة
             // ============================================
-            renderDevices(container) {
-                this.fetchData();
-                
+            async renderDevices(container) {
+                container.innerHTML = `
+                    <div class="loading-spinner" style="display:flex;justify-content:center;padding:60px;gap:12px;">
+                        <i class="fas fa-spinner fa-spin" style="font-size:32px;color:var(--accent-primary);"></i>
+                        <span style="color:var(--text-secondary);">جاري التحميل...</span>
+                    </div>
+                `;
+
+                await this.fetchData();
+
                 container.innerHTML = `
                     <div class="table-container">
                         <div class="table-header">
@@ -1176,6 +1018,9 @@
                                     <option value="blocked">محظور</option>
                                     <option value="inactive">غير نشط</option>
                                 </select>
+                                <button class="btn btn-primary" onclick="app.refreshData()">
+                                    <i class="fas fa-sync"></i>
+                                </button>
                             </div>
                         </div>
                         <div id="devicesTable">
@@ -1223,9 +1068,6 @@
                                                 <i class="fas fa-ban"></i>
                                                </button>`
                                         }
-                                        <button class="btn btn-primary btn-sm" onclick="app.resetDevice('${device.id}')">
-                                            <i class="fas fa-sync"></i>
-                                        </button>
                                     </td>
                                 </tr>
                             `).join('')}
@@ -1264,7 +1106,7 @@
                                 <label>الباقة</label>
                                 <select id="packageNamePage" required>
                                     <option value="basic">Basic</option>
-                                    <option value="premium" selected>Premium</option>
+                                    <option value="premium">Premium</option>
                                     <option value="pro">Pro</option>
                                 </select>
                             </div>
@@ -1284,7 +1126,7 @@
                             </div>
                             <div class="form-group">
                                 <label>معرف المستخدم (User ID)</label>
-                                <input type="text" id="userIdPage" placeholder="أدخل User ID" required value="user-" + Date.now() />
+                                <input type="text" id="userIdPage" placeholder="أدخل User ID" required />
                             </div>
                             <button type="submit" class="btn btn-success">
                                 <i class="fas fa-plus"></i> إنشاء اشتراك
@@ -1300,8 +1142,60 @@
             }
 
             // ============================================
-            // العمليات
+            // عرض الإعدادات
             // ============================================
+            renderSettings(container) {
+                container.innerHTML = `
+                    <div class="form-card">
+                        <h2><i class="fas fa-cog" style="color:var(--accent-primary);"></i> إعدادات المطور</h2>
+                        
+                        <div style="background:var(--bg-primary);padding:16px;border-radius:8px;margin-bottom:20px;">
+                            <h4 style="color:var(--text-secondary);margin-bottom:8px;">🔗 رابط الـ API</h4>
+                            <code style="display:block;background:var(--bg-card);padding:8px 12px;border-radius:4px;font-size:12px;direction:ltr;">
+                                ${this.API_BASE}
+                            </code>
+                        </div>
+
+                        <div style="background:var(--bg-primary);padding:16px;border-radius:8px;margin-bottom:20px;">
+                            <h4 style="color:var(--text-secondary);margin-bottom:8px;">👤 معلومات المطور</h4>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:14px;">
+                                <span style="color:var(--text-secondary);">الاسم:</span>
+                                <span>${this.user?.name || 'غير مسجل'}</span>
+                                <span style="color:var(--text-secondary);">البريد:</span>
+                                <span>${this.user?.email || 'غير مسجل'}</span>
+                                <span style="color:var(--text-secondary);">الدور:</span>
+                                <span>${this.user?.role || 'غير مسجل'}</span>
+                            </div>
+                        </div>
+
+                        <div style="background:var(--bg-primary);padding:16px;border-radius:8px;margin-bottom:20px;">
+                            <h4 style="color:var(--text-secondary);margin-bottom:8px;">📊 الإحصائيات</h4>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:14px;">
+                                <span style="color:var(--text-secondary);">الاشتراكات:</span>
+                                <span>${this.subscriptions.length}</span>
+                                <span style="color:var(--text-secondary);">الأجهزة:</span>
+                                <span>${this.devices.length}</span>
+                                <span style="color:var(--text-secondary);">المستخدمين:</span>
+                                <span>${this.stats.users || 0}</span>
+                            </div>
+                        </div>
+
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                            <button class="btn btn-primary" onclick="app.refreshData()">
+                                <i class="fas fa-sync"></i> تحديث البيانات
+                            </button>
+                            <button class="btn btn-danger" onclick="app.logout()">
+                                <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // ============================================
+            // العمليات على الخادم
+            // ============================================
+            
             async handleCreateSubscription() {
                 const userId = document.getElementById('userId').value;
                 const packageName = document.getElementById('packageName').value;
@@ -1314,33 +1208,23 @@
                     return;
                 }
 
-                // إنشاء مفتاح عشوائي
-                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-                let key = '';
-                for (let i = 0; i < 4; i++) {
-                    for (let j = 0; j < 4; j++) {
-                        key += chars.charAt(Math.floor(Math.random() * chars.length));
-                    }
-                    if (i < 3) key += '-';
+                try {
+                    const result = await this.apiRequest('/subscriptions/create', 'POST', {
+                        userId,
+                        packageName,
+                        maxDevices,
+                        duration,
+                        autoRenew
+                    });
+
+                    this.showToast(`✅ تم إنشاء الاشتراك بنجاح!\nالمفتاح: ${result.subscription.license_key}`, 'success');
+                    closeModal('createModal');
+                    await this.fetchData();
+                    this.navigateTo('subscriptions');
+                    
+                } catch (error) {
+                    this.showToast(`❌ فشل إنشاء الاشتراك: ${error.message}`, 'danger');
                 }
-                const licenseKey = packageName.toUpperCase() + '-' + key;
-
-                const newSubscription = {
-                    id: 'sub-' + Date.now(),
-                    license_key: licenseKey,
-                    package_name: packageName,
-                    user: { name: 'مستخدم جديد', email: userId + '@test.com' },
-                    max_devices: maxDevices,
-                    devices_count: 0,
-                    start_date: new Date().toISOString(),
-                    end_date: new Date(Date.now() + duration * 24 * 60 * 60 * 1000).toISOString(),
-                    status: 'active'
-                };
-
-                this.subscriptions.push(newSubscription);
-                this.showToast(`✅ تم إنشاء الاشتراك بنجاح!\nالمفتاح: ${licenseKey}`, 'success');
-                closeModal('createModal');
-                this.navigateTo('subscriptions');
             }
 
             async handleCreateSubscriptionPage() {
@@ -1355,88 +1239,140 @@
                     return;
                 }
 
-                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-                let key = '';
-                for (let i = 0; i < 4; i++) {
-                    for (let j = 0; j < 4; j++) {
-                        key += chars.charAt(Math.floor(Math.random() * chars.length));
-                    }
-                    if (i < 3) key += '-';
-                }
-                const licenseKey = packageName.toUpperCase() + '-' + key;
+                try {
+                    const result = await this.apiRequest('/subscriptions/create', 'POST', {
+                        userId,
+                        packageName,
+                        maxDevices,
+                        duration,
+                        autoRenew
+                    });
 
-                const newSubscription = {
-                    id: 'sub-' + Date.now(),
-                    license_key: licenseKey,
-                    package_name: packageName,
-                    user: { name: 'مستخدم جديد', email: userId + '@test.com' },
-                    max_devices: maxDevices,
-                    devices_count: 0,
-                    start_date: new Date().toISOString(),
-                    end_date: new Date(Date.now() + duration * 24 * 60 * 60 * 1000).toISOString(),
-                    status: 'active'
-                };
-
-                this.subscriptions.push(newSubscription);
-                this.showToast(`✅ تم إنشاء الاشتراك بنجاح!\nالمفتاح: ${licenseKey}`, 'success');
-                this.navigateTo('subscriptions');
-            }
-
-            renewSubscription(id) {
-                if (!confirm('هل تريد تجديد هذا الاشتراك لمدة 30 يوماً؟')) return;
-                
-                const sub = this.subscriptions.find(s => s.id === id);
-                if (sub) {
-                    sub.end_date = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
-                    sub.status = 'active';
-                    this.showToast('✅ تم تجديد الاشتراك بنجاح', 'success');
+                    this.showToast(`✅ تم إنشاء الاشتراك بنجاح!\nالمفتاح: ${result.subscription.license_key}`, 'success');
+                    await this.fetchData();
                     this.navigateTo('subscriptions');
+                    
+                } catch (error) {
+                    this.showToast(`❌ فشل إنشاء الاشتراك: ${error.message}`, 'danger');
                 }
             }
 
-            deleteSubscription(id) {
+            async renewSubscription(id) {
+                if (!confirm('هل تريد تجديد هذا الاشتراك؟')) return;
+
+                try {
+                    await this.apiRequest('/subscriptions/renew', 'POST', {
+                        subscriptionId: id,
+                        duration: 30
+                    });
+                    
+                    this.showToast('✅ تم تجديد الاشتراك بنجاح', 'success');
+                    await this.fetchData();
+                    this.navigateTo('subscriptions');
+                    
+                } catch (error) {
+                    this.showToast(`❌ فشل تجديد الاشتراك: ${error.message}`, 'danger');
+                }
+            }
+
+            async deleteSubscription(id) {
                 if (!confirm('هل أنت متأكد من حذف هذا الاشتراك؟')) return;
-                
-                this.subscriptions = this.subscriptions.filter(s => s.id !== id);
-                this.showToast('✅ تم حذف الاشتراك', 'info');
-                this.navigateTo('subscriptions');
+
+                try {
+                    await this.apiRequest(`/subscriptions/${id}`, 'DELETE');
+                    this.showToast('✅ تم حذف الاشتراك', 'info');
+                    await this.fetchData();
+                    this.navigateTo('subscriptions');
+                    
+                } catch (error) {
+                    this.showToast(`❌ فشل حذف الاشتراك: ${error.message}`, 'danger');
+                }
             }
 
-            blockDevice(id) {
+            async blockDevice(id) {
                 if (!confirm('هل تريد حظر هذا الجهاز؟')) return;
-                
-                const device = this.devices.find(d => d.id === id);
-                if (device) {
-                    device.status = 'blocked';
+
+                try {
+                    await this.apiRequest('/devices/block', 'POST', { deviceId: id });
                     this.showToast('✅ تم حظر الجهاز', 'warning');
+                    await this.fetchData();
                     this.navigateTo('devices');
+                    
+                } catch (error) {
+                    this.showToast(`❌ فشل حظر الجهاز: ${error.message}`, 'danger');
                 }
             }
 
-            unblockDevice(id) {
-                const device = this.devices.find(d => d.id === id);
-                if (device) {
-                    device.status = 'active';
+            async unblockDevice(id) {
+                try {
+                    await this.apiRequest('/devices/unblock', 'POST', { deviceId: id });
                     this.showToast('✅ تم إلغاء حظر الجهاز', 'success');
+                    await this.fetchData();
                     this.navigateTo('devices');
+                    
+                } catch (error) {
+                    this.showToast(`❌ فشل إلغاء الحظر: ${error.message}`, 'danger');
                 }
             }
 
-            resetDevice(id) {
-                if (!confirm('سيتم إعادة تعيين هذا الجهاز. هل أنت متأكد؟')) return;
-                
-                const device = this.devices.find(d => d.id === id);
-                if (device) {
-                    device.status = 'inactive';
-                    device.last_seen = new Date().toISOString();
-                    this.showToast('✅ تم إعادة تعيين الجهاز', 'info');
-                    this.navigateTo('devices');
-                }
+            async refreshData() {
+                await this.fetchData();
+                this.navigateTo(this.currentPage);
+                this.showToast('✅ تم تحديث البيانات', 'success');
+            }
+
+            // ============================================
+            // الأحداث
+            // ============================================
+            setupEventListeners() {
+                document.getElementById('themeToggle').addEventListener('click', () => this.toggleTheme());
+
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        this.navigateTo(item.dataset.page);
+                    });
+                });
+
+                document.getElementById('logoutBtn').addEventListener('click', () => this.logout());
+
+                document.getElementById('loginForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handleLogin();
+                });
+
+                document.getElementById('createForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handleCreateSubscription();
+                });
+
+                document.querySelectorAll('.modal-overlay').forEach(modal => {
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            modal.classList.remove('active');
+                        }
+                    });
+                });
             }
 
             // ============================================
             // أدوات مساعدة
             // ============================================
+            loadTheme() {
+                const saved = localStorage.getItem('theme') || 'dark';
+                document.documentElement.className = saved === 'dark' ? '' : 'light-theme';
+                const icon = document.querySelector('#themeToggle i');
+                if (icon) {
+                    icon.className = saved === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+                }
+            }
+
+            toggleTheme() {
+                const isLight = document.documentElement.classList.contains('light-theme');
+                document.documentElement.classList.toggle('light-theme');
+                localStorage.setItem('theme', isLight ? 'dark' : 'light');
+                this.loadTheme();
+            }
+
             translateStatus(status) {
                 const map = {
                     active: 'نشط',
@@ -1469,21 +1405,8 @@
                 if (existing) existing.remove();
 
                 const toast = document.createElement('div');
-                toast.className = `toast-notification alert alert-${type}`;
-                toast.style.cssText = `
-                    position: fixed;
-                    bottom: 30px;
-                    right: 30px;
-                    z-index: 9999;
-                    max-width: 400px;
-                    padding: 16px 24px;
-                    border-radius: 12px;
-                    background: var(--bg-card);
-                    border: 1px solid var(--border);
-                    box-shadow: var(--shadow);
-                    animation: slideIn 0.3s ease;
-                `;
-
+                toast.className = `toast-notification`;
+                
                 const colors = {
                     success: '#2ed573',
                     danger: '#ff4757',
@@ -1493,9 +1416,9 @@
 
                 toast.style.borderRight = `4px solid ${colors[type] || '#4f8cff'}`;
                 toast.innerHTML = `
-                    <div style="display:flex;align-items:center;gap:10px;color:var(--text-primary);">
+                    <div style="display:flex;align-items:flex-start;gap:10px;color:var(--text-primary);">
                         <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'danger' ? 'exclamation-circle' : 'info-circle'}" 
-                           style="color:${colors[type] || '#4f8cff'};font-size:20px;"></i>
+                           style="color:${colors[type] || '#4f8cff'};font-size:20px;margin-top:2px;"></i>
                         <span style="font-size:14px;white-space:pre-line;">${message}</span>
                     </div>
                 `;
@@ -1510,16 +1433,20 @@
             }
 
             startHeartbeat() {
-                setInterval(() => {
+                setInterval(async () => {
                     if (this.isLoggedIn) {
-                        console.log('💓 نبض القلب:', new Date().toISOString());
+                        try {
+                            await this.apiRequest('/heartbeat', 'POST', {});
+                        } catch (e) {
+                            // تجاهل الأخطاء
+                        }
                     }
-                }, 30000);
+                }, 60000);
             }
         }
 
         // ============================================
-        // دوال مساعدة للـ HTML
+        // دوال عامة
         // ============================================
         function openModal(id) {
             document.getElementById(id).classList.add('active');
@@ -1537,25 +1464,6 @@
             app = new SubscriptionManager();
             window.app = app;
         });
-
-        // إضافة أنماط إضافية للـ Toast
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            .toast-notification {
-                transition: all 0.3s ease;
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 
 </body>
